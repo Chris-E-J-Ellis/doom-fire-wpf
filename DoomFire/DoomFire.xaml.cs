@@ -178,6 +178,8 @@ namespace DoomFire
             {
                 var decay = random.Next(0, 3);
                 var destinationPosition = (sourcePosition - fireWidth) - decay + 1;
+                if (destinationPosition < 0)
+                    return;
 
                 firePixelBuffer[destinationPosition] = firePixelBuffer[sourcePosition] - (decay & 1);
             }
